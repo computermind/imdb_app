@@ -11,6 +11,10 @@ class MoviesController < ApplicationController
     end
   end
   
+  def show
+      @movie = Review.new
+  end
+  
   def search
       base_url = 'http://www.omdbapi.com/?s='
       search_term = params[:q]
@@ -52,11 +56,7 @@ class MoviesController < ApplicationController
     	    flash[:alert] = "Unable to favorite movie."
                 redirect_to root_path
     	end
-	end 
-  end
-
-  def show
-      @movie = Review.new
+    end 
   end
 
   def destroy
