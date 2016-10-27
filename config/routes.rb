@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'welcome#index'
 
   devise_for :users
@@ -11,6 +12,4 @@ Rails.application.routes.draw do
   get 'search' => 'movies#search' # search_path => /search
   # movie details route
   get 'details/:imdb_id' => 'movies#details', as: 'details' # details_path(:id) => /details/:id
-
-
 end
